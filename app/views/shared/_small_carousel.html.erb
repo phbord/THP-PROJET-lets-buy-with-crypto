@@ -1,0 +1,44 @@
+<div id="small-carousel" class="carousel slide mb-5" data-bs-ride="carousel">
+    <!-- INDICATOR BUTTONS -->
+    <div class="carousel-indicators">
+        <% @real_estate.pictures.each.with_index do |img, index| %>
+            <button type="button" 
+                    data-bs-target="#small-carousel" 
+                    data-bs-slide-to="<%= index %>" 
+                    aria-label="Slide <%= index + 1 %>" 
+                    <% if index == 0 %> aria-current="true" class="active"<% end %>></button>
+        <% end %>
+    </div>
+
+    <div class="carousel-inner">
+        <!-- BODY -->
+        <% @real_estate.pictures.each.with_index do |img, index| %>
+            <div class="carousel-item<% if index == 0 %> active<% end %>">
+                <!-- Picture -->
+                <div class="card-image text-center">
+                    <% if @real_estate.pictures.attached? %>
+                        <%= image_tag @real_estate.thumbnail(index), alt: 'picture', class: 'carousel-img'%>
+                    <% elsif @real_estate.image_urls %>
+                        <%= image_tag @real_estate.image_urls, alt: 'picture', class: 'carousel-img'%>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <!-- PREV AND NEXT BUTTONS -->
+    <button class="carousel-control-prev" 
+            type="button" 
+            data-bs-target="#small-carousel" 
+            data-bs-slide="prev">
+        <%= inline_svg_tag "chevron-left.svg", class: "chevron-carousel" %>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" 
+            type="button" 
+            data-bs-target="#small-carousel" 
+            data-bs-slide="next">
+        <%= inline_svg_tag "chevron-right.svg", class: "chevron-carousel" %>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

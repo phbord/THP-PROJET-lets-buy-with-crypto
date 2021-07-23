@@ -1,0 +1,15 @@
+<%# ALERTE %>
+<% if flash[:notice].present? || flash[:error].present? %>
+    <div class="alert-flash <% if flash[:notice].present? %>alert-notice<% elsif flash[:error].present? %>alert-error<% end %>" 
+         role="alert">
+        <div class="container d-flex justify-content-center">
+            <div id="alert-content" class="mw-form text-center">
+                <% if flash[:notice].present? %>
+                    <%= flash[:notice] %>
+                <% elsif flash[:error].present? %>
+                    <%= flash[:error] %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,36 @@
+#discussion{
+  border-radius:10px;
+  background: 
+    linear-gradient(
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0.5)
+    );
+  color:white !important;
+  font-size:20px;
+  overflow-x: hidden; 
+  overflow-y: scroll; 
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  height:84vh;
+  max-width: 40rem;
+}
+
+#discussion::-webkit-scrollbar {
+    display: none;
+}
+
+#container-discussion {
+  background:url(amsterdam.jpg);
+  background-size:cover;
+
+  .img-avatar {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid $primary;
+    border-radius: 50%;
+  }
+
+  .default-avatar {
+    fill: $primary;
+  }
+}

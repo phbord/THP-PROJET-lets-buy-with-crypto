@@ -1,0 +1,9 @@
+.dropdown-item {
+    &,&:focus,&:hover {
+        color: $dark;
+        font-size: 1rem;
+    }
+    &:focus,&:hover {
+        background-color: $pink;
+    }
+}

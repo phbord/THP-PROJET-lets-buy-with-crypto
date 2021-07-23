@@ -1,0 +1,19 @@
+.newsletter-block {
+    background-color: $pink;
+    padding: 6rem 3.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .picto_newsletter {
+        opacity: 0.3;
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.square-block {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10rem;
+}

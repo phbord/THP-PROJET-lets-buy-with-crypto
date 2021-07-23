@@ -1,0 +1,51 @@
+.static-page-container {
+    .btn-circle {
+        border: 1px solid $primary;
+
+        &:hover {
+            border-color: $primary_hover;
+            text-decoration: none;
+
+            .fab {
+                color: $primary_hover;
+            }
+        }
+
+        &.disabled {
+            opacity: .125;
+        }
+
+        .fab {
+            color: $primary;
+        }
+    }
+
+    .avatar {
+        width: 8rem;
+        height: 8rem;
+        border: 1px solid $primary;
+        border-radius: 50%;
+    }
+
+    #contact-list {
+        & > li {
+            order: 0;
+        }
+
+        #team-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (max-width: 991px) {
+            & > li {
+                order: 1;
+            }
+            #team-item {
+                order: 0;
+                display: block;
+            }
+        }
+    }
+}
